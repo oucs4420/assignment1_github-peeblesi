@@ -14,7 +14,7 @@ int main( int argc, char* argv[] ){
     int numlines = 0;
     string buffer;
     // just to get you started, this is how to refer to the arguments that were passed
-    for (int arg = 0; arg < argc; ++arg){
+    for (int arg = 1; arg < argc; ++arg){
             //std::cout << "argv[" << arg << "]: " << argv[arg] << '\n' ;
         numlines = 0;
         string filename = argv[arg];
@@ -25,6 +25,7 @@ int main( int argc, char* argv[] ){
             getline(ins, buffer);
         }
         ins.close();
+        numlines--;
         cout << filename << ": " << numlines << endl;
     }
     exit(0); // this means that the program executed correctly!
