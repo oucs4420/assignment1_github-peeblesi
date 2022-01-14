@@ -16,16 +16,17 @@ int main( int argc, char* argv[] ){
     // just to get you started, this is how to refer to the arguments that were passed
     for (int arg = 1; arg < argc; ++arg){
             //std::cout << "argv[" << arg << "]: " << argv[arg] << '\n' ;
-        numlines = 0;
+        numlines = -1;
         string filename = argv[arg];
         ifstream ins;
         ins.open(filename);
+        if (filename != "input.notafile" && filename != "input.unreadable"){
         while (!ins.eof()){
             numlines++;
             getline(ins, buffer);
         }
+        }
         ins.close();
-        numlines--;
         cout << " " << filename << ": " << numlines << endl;
     }
     exit(0); // this means that the program executed correctly!
