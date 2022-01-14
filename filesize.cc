@@ -26,7 +26,7 @@ int main( int argc, char* argv[] ){
         }
         ins.close();
         numlines--;
-        cout << filename << ": " << numlines << endl;
+        cout << " " << filename << ": " << numlines << endl;
     }
     exit(0); // this means that the program executed correctly!
 }
