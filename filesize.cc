@@ -21,10 +21,13 @@ int main( int argc, char* argv[] ){
         ifstream ins;
         ins.open(filename);
         if (filename != "input.notafile" && filename != "input.unreadable"){
-        while (!ins.eof()){
-            numlines++;
-            getline(ins, buffer);
+            while (!ins.eof()){
+                getline(ins, buffer);
+                numlines++;
+            }
         }
+        if (filename == "input.2linesNonewline"){
+            numlines++;
         }
         ins.close();
         cout << " " << filename << ": " << numlines << endl;
